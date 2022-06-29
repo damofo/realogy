@@ -1,12 +1,7 @@
 import mongoose from "mongoose";
 import { CONFIG } from "../constants/database";
 
-/**
- * Returns a Promise that’s fulfilled once the database is connected. The
- * Promise is cached globally to avoid unnecessary connections when possible.
- */
 export async function connect() {
-  console.log("hererereres");
   const { readyState } = mongoose.connection;
   console.log("MongoDB connection state: %s", mongoose.connection.readyState);
 

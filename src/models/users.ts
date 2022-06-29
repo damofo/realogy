@@ -6,6 +6,7 @@ const VALID_EMAIL_RE =
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
+    required: true,
   },
   email: {
     type: String,
@@ -15,7 +16,7 @@ const UserSchema = new mongoose.Schema({
       return VALID_EMAIL_RE.test(email);
     },
   },
-  connectedBy: {
+  departmentId: {
     type: mongoose.Types.ObjectId,
     ref: "Department",
     required: true,
