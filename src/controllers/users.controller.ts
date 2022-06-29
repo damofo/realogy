@@ -116,7 +116,9 @@ class UserController {
     }
   }
 
-  async getByid(req: Request, res: Response, next: any, id: string) {
+  // this is a middleware function that get a user by id and return 404 error if no
+  // also it attach user model to request so that it can be used in update/delete/read
+  async getById(req: Request, res: Response, next: any, id: string) {
     try {
       const data = await User.findById(id).populate("departmentId");
 

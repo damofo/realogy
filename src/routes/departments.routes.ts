@@ -10,6 +10,6 @@ router
   .put(controller.update)
   .delete(controller.delete);
 
-router.param("id", controller.getByid);
+router.param("id", controller.getById);
 
 export default router;

@@ -116,7 +116,9 @@ class DepartmentController {
     }
   }
 
-  async getByid(req: Request, res: Response, next: any, id: string) {
+  // this is a middleware function that get a department by id and return 404 error if no
+  // also it attach department model to request so that it can be used in update/delete/read
+  async getById(req: Request, res: Response, next: any, id: string) {
     try {
       const data = await Department.findById(id);
 
